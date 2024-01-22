@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html data-theme="dark">
+        <head>
+            <title>Steam Game Scrapper</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        </head>
+        <body>
+            <main class="container">
+                <h1>For "{{fileName}}":</h1>
+                <table role="grid">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Discount Rate</th>
+                            <th>Original Price [C$]</th>
+                            <th>Final Price [C$]</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for game in games %}
+                        <tr>
+                            <td>{{game.title}}</td>
+                            <td>{{game.discount}}</td>
+                            <td>{{game.ogprice}}</td>
+                            <td>{{game.newprice}}</td>
+                            <td><a href="{{game.link}}">Game</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </main>
+        </body>
+    </html>
