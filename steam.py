@@ -41,7 +41,7 @@ def scrape(fileName):
                 'link': game.get('href')
             }
             gamePriceInfo.append(gamelist)
-
-            save(fileName, gamePriceInfo)
+    
+    save(fileName, gamePriceInfo)
     
     return gamePriceInfo
