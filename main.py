@@ -17,4 +17,4 @@ def secondehome():
     else:
         return redirect('/')
 
-app.run('0.0.0.0')
+app.run()
