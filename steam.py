@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 import time
+from file import save
 
-def scrape():
+def scrape(fileName):
     url = 'https://store.steampowered.com/search/?filter=topsellers&os=win'
 
     gamePriceInfo = []
@@ -40,5 +41,7 @@ def scrape():
                 'link': game.get('href')
             }
             gamePriceInfo.append(gamelist)
+
+            save(fileName, gamePriceInfo)
     
     return gamePriceInfo

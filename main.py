@@ -12,7 +12,7 @@ def home():
 def secondehome():
     fileName = request.args.get('fileName')
     if fileName == 'steam':
-        games = scrape()
+        games = scrape(fileName)
         return render_template('search.html', fileName = fileName, games = games)
     else:
         return redirect('/')
